@@ -45,9 +45,10 @@ function removeFromCart(item) {
   // write your code here
   var del = cart.reduce((a, b) =>  ((b.itemPrice === item) ? a + b : a), -1);
   if (del !== -1) {
-    cart.
+    return cart.splice(del+1,1)
+  } else {
+    return 
   }
-  
 }
 
 function placeOrder(cardNumber) {
