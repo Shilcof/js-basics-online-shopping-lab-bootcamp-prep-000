@@ -43,7 +43,7 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
-  var del = cart.reduce((a, b) =>  b.itemPrice, b, 0)
+  var del = cart.reduce((a, b) =>  ((b.itemPrice === item) ? a + b : a), 0);
   
   
 }
