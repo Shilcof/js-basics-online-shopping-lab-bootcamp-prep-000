@@ -37,7 +37,7 @@ function viewCart() {
 
 function total() {
   // write your code here
-  var total = cart.reduce((a, b) => a + b.itemPrice, 0)
+  var total = cart.reduce((a, b) => a + b.itemPrice, 0);
   return total;
 }
 
@@ -45,17 +45,18 @@ function removeFromCart(item) {
   // write your code here
   var del = cart.reduce((a, b, c) => ((b.itemName === item) ? c : a ), -1);
   if (del !== -1) {
-    return cart.splice(del,1)
+    return cart.splice(del,1);
   } else {
-    return "That item is not in your cart."
+    return "That item is not in your cart.";
   }
 }
 
 function placeOrder(cardNumber) {
   // write your code here
   if (typeof cardNumber === 'undefined') {
-    return "Sorry, we don't have a credit card on file for you."
+    return "Sorry, we don't have a credit card on file for you.";
   } else {
-    return `Your total cost is $${total}, which will be charged to the card ${cardNumber}.`
+    cart = [];
+    return `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`;
   }
 }
