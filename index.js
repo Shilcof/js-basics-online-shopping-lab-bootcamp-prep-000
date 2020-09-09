@@ -43,9 +43,9 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
-  var del = cart.reduce((a, b) => ((b.itemPrice === item) ? a + b : a), -1);
+  var del = cart.reduce((a, b, c) => ((b.itemName === item) ? c : a ), -1);
   if (del !== -1) {
-    return cart.splice(del+1,1)
+    return cart.splice(del,1)
   } else {
     return "That item is not in your cart."
   }
